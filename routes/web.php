@@ -57,6 +57,7 @@ Route::middleware('auth')->group(function (){
     Route::get('penerimaan/lainlain')->name('penerimaan.lainlain');
     // pengeluaran pembelian
     Route::get('pengeluaran/pembelian')->name('pengeluaran.pembelian');
+    Route::get('pengeluaran/pembelian/form', \App\Http\Livewire\Kasir\PengeluaranPembelianForm::class)->name('pengeluaran.pembelian.form');
     // pengeluaran lain-lain
     Route::get('pengeluaran/lainlain')->name('pengeluaran.lainlain');
     // mutasi kas

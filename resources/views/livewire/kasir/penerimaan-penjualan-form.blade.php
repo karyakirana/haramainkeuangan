@@ -9,6 +9,7 @@
                                 <x-atoms.input-singledate id="tanggal" />
                             </x-atoms.input-group>
                         </div>
+
                         <div class="col-6">
                             <x-atoms.input-group label="Customer">
                                 <x-atoms.input-text data-bs-toggle="modal" data-bs-target="#setCustomerModal" wire:model.defer="customer_nama"/>
