@@ -7,9 +7,12 @@ use Livewire\Component;
 
 class SetCustomerModal extends Component
 {
+    protected $listeners = [
+        'setCustomer'
+    ];
     public function setCustomer(Customer $customer)
     {
-        $this->emit('setCustomer', $customer);
+        $this->emit('sendCustomer',(object) $customer);
     }
 
     public function render()

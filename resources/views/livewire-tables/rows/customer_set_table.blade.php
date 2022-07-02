@@ -11,5 +11,5 @@
     {{$row->alamat}}
 </x-atoms.table-td>
 <x-atoms.table-td width="15%" align="center">
-    {{$row->id}}
+    <x-atoms.button-icon wire:click="$emit('setCustomer', '{{$row->id}}')"><i class="fas fs-3 fa-file-import"></i></x-atoms.button-icon>
 </x-atoms.table-td>
