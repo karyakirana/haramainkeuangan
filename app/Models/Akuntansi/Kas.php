@@ -2,13 +2,14 @@
 
 namespace App\Models\Akuntansi;
 
+use App\Haramain\Bisnis\Models\KodeTraits;
 use App\Haramain\Kasir\Models\AkunTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Kas extends Model
 {
-    use HasFactory, AkunTrait;
+    use HasFactory, AkunTrait, KodeTraits;
     protected $table = 'haramain_keuangan.kas';
 
     protected $fillable = [

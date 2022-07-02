@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Custom\DashboardController;
 use App\Http\Controllers\Custom\LoginController;
+use App\Http\Livewire\Kasir\PenerimaanPenjualanForm;
+use App\Http\Livewire\Kasir\PenerimaanPenjualanIndex;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,7 +50,8 @@ Route::middleware('auth')->group(function (){
  */
 Route::middleware('auth')->group(function (){
     // penerimaan penjualan
-    Route::get('penerimaan/penjualan', \App\Http\Livewire\Kasir\PenerimaanPenjualanIndex::class)->name('penerimaan.penjualan');
+    Route::get('penerimaan/penjualan', PenerimaanPenjualanIndex::class)->name('penerimaan.penjualan');
+    Route::get('penerimaan/penjualan/form', PenerimaanPenjualanForm::class)->name('penerimaan.penjualan.form');
     // penerimaan lain-lain
     Route::get('penerimaan/lainlain')->name('penerimaan.lainlain');
     // pengeluaran pembelian

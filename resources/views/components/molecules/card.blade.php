@@ -1,25 +1,24 @@
 @props([
-    'title',
-    'toolbar'=>null,
+    'title'=>null,
     'footer'
-])
-<div class="card shadow-sm">
-    @isset($title)
-    <div class="card-header">
-        <h3 class="card-title">{{$title}}</h3>
-        <div class="card-toolbar">
-            <button type="button" class="btn btn-sm btn-light">
-                {{$toolbar}}
-            </button>
+    ])
+<div class="card">
+    @if($title)
+        <div class="card-header">
+            <div class="card-title">{{$title}}</div>
+            @isset($toolbar)
+                <div class="card-toolbar">
+                    {{$toolbar}}
+                </div>
+            @endisset
         </div>
-    </div>
-    @endisset
+    @endif
     <div class="card-body">
         {{$slot}}
     </div>
     @isset($footer)
-    <div class="card-footer">
-        {{$footer}}
-    </div>
+        <div class="card-footer">
+            {{$footer}}
+        </div>
     @endisset
 </div>

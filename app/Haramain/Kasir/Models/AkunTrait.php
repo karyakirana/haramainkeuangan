@@ -11,11 +11,11 @@ trait AkunTrait
 
     public function akunKas()
     {
-        return $this->akun();
+        return $this->belongsTo(Akun::class, 'akun_kas_id');
     }
 
     public function akunPiutang()
     {
-        return $this->akun();
+        return $this->belongsTo(Akun::class, 'akun_tujuan_id');
     }
 }

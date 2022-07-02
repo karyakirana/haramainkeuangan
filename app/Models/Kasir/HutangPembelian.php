@@ -23,7 +23,7 @@ class HutangPembelian extends Model
         return $this->belongsTo(SaldoHutangPembelian::class, 'saldo_hutang_pembelian_id');
     }
 
-    public function pembelianable()
+    public function hutangPembelian()
     {
         return $this->morphTo(__FUNCTION__, 'pembelian_type', 'pembelian_id');
     }
