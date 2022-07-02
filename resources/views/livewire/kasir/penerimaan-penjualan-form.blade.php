@@ -11,7 +11,7 @@
                         </div>
                         <div class="col-6">
                             <x-atoms.input-group label="Customer">
-                                <x-atoms.input-text data-bs-toggle="modal" data-bs-target="#setCustomerModal"/>
+                                <x-atoms.input-text data-bs-toggle="modal" data-bs-target="#setCustomerModal" wire:model.defer="customer_nama"/>
                             </x-atoms.input-group>
                         </div>
                     </div>

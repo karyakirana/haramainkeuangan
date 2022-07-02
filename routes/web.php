@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Custom\DashboardController;
 use App\Http\Controllers\Custom\LoginController;
+use App\Http\Controllers\Piutang\PiutangPenjualanController;
 use App\Http\Livewire\Kasir\PenerimaanPenjualanForm;
 use App\Http\Livewire\Kasir\PenerimaanPenjualanIndex;
 use Illuminate\Support\Facades\Route;
@@ -61,7 +62,7 @@ Route::middleware('auth')->group(function (){
     // mutasi kas
     Route::get('mutasi')->name('mutasi');
     // piutang penjualan
-    Route::get('piutang/penjualan')->name('piutang.penjualan');
+    Route::get('piutang/penjualan', [PiutangPenjualanController::class, 'index'])->name('piutang.penjualan');
     // piutang internal
     Route::get('piutang/internal')->name('piutang.internal');
     // hutang pembelian
@@ -75,7 +76,20 @@ Route::middleware('auth')->group(function (){
  */
 Route::middleware('auth')->group(function (){
     // neraca awal
+    Route::get('neraca/awal/asset/kas');
+    Route::get('neraca/awal/piutang/penjualan');
+    Route::get('neraca/awal/piutang/penjualan/form');
+    Route::get('neraca/awal/piutang/penjualan/form/{piutang_penjualan_id}');
+    Route::get('neraca/awal/piutang/penjualan/lama');
+    Route::get('neraca/awal/piutang/penjualan/lama/form');
+    Route::get('neraca/awal/piutang/penjualan/lama/form/{piutang_penjualan_lama_id}');
+    Route::get('neraca/awal/piutang/penjualan/retur');
+    Route::get('neraca/awal/hutang/pembelian');
+    Route::get('neraca/awal/hutang/pembelian/retur');
     // neraca saldo
+    Route::get('neracasaldo');
+    Route::get('neracasaldo/awal');
+    Route::get('neracasaldo/berjalan');
 });
 
 //require __DIR__.'/auth.php';
